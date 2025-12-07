@@ -12,3 +12,12 @@ def get_count_characters(text:str):
             char_dict[char] = 1
 
     return char_dict
+
+def get_sorted_characters(char_counts):
+    count_dicts = []
+    
+    for key, value in char_counts.items():
+        count_dicts.append({"char": key, "num": value})
+
+    count_dicts.sort(key=lambda dict: dict["num"], reverse=True)
+    return count_dicts
